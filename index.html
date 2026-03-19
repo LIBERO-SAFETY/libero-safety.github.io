@@ -99,14 +99,66 @@
       color: #f5f5f5;
       font-weight: 500;
     }
-    .hero-subtitle {
-      font-size: 1.9rem;
-      max-width: 22em;
+    .hero-main-title {
+      margin-bottom: 0.35rem;
+    }
+    .realmirror-banner .hero-subtitle {
+      font-size: 2.2rem !important;
+      max-width: 26em;
+      margin-top: 0.75rem;
       margin-left: auto;
       margin-right: auto;
-      line-height: 1.35;
+      margin-bottom: 0;
+      line-height: 1.38;
       text-align: center;
       white-space: normal;
+      color: #f5f5f5 !important;
+    }
+    @media screen and (max-width: 768px) {
+      .realmirror-banner .hero-subtitle {
+        font-size: 1.55rem !important;
+        max-width: 95%;
+      }
+    }
+    /* Hero: PDF / ArXiv / Dataset / Code pill links (project-page style) */
+    .hero-pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem 0.75rem;
+      margin-top: 1.75rem;
+      padding: 0 0.5rem;
+    }
+    .hero-pub-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1.2rem;
+      min-height: 2.5rem;
+      background: #1c1c1e;
+      color: #fafafa !important;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      text-decoration: none !important;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+    .hero-pub-links a:hover {
+      background: #2c2c2e;
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+    .hero-pub-links a .ai,
+    .hero-pub-links a .fas,
+    .hero-pub-links a .fab {
+      font-size: 1.05em;
+      opacity: 0.95;
     }
     .realmirror-banner .button.is-white.is-outlined {
       border-color: white;
@@ -394,9 +446,23 @@
     </video>
     <div class="hero-body">
       <div class="container has-text-centered">
-        <h2 class="subtitle is-4 hero-subtitle">LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models</h2>
-        <h1 class="title is-1" style="font-size: 6.2rem;">LIBERO-Safety</h1>
+        <h1 class="title is-1 hero-main-title" style="font-size: 6.2rem;">LIBERO-Safety</h1>
+        <h2 class="subtitle is-3 hero-subtitle">LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models</h2>
         <span class="dot-dash">.</span>
+        <nav class="hero-pub-links" aria-label="Paper and resources">
+          <a href="https://arxiv.org/pdf/2510.13626.pdf" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+          </a>
+          <a href="https://arxiv.org/abs/2510.13626" target="_blank" rel="noopener noreferrer">
+            <i class="ai ai-arxiv" aria-hidden="true"></i> ArXiv
+          </a>
+          <a href="https://huggingface.co/datasets/Sylvest/LIBERO-Safety/tree/main" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-database" aria-hidden="true"></i> Dataset
+          </a>
+          <a href="https://github.com/LIBERO-SAFETY/LIBERO-Safety" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i> Code
+          </a>
+        </nav>
       </div>
     </div>
   </section>
