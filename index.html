@@ -976,12 +976,12 @@
 
       <div class="failure-case-analysis content">
         <p>
-          <b>Key Finding 7: Sub-optimal trajectory synthesis drives task failures without constraint violations.</b>
-          Even when states stay collision-free, policies often leave the nominal task manifold—through excessive halting or oscillatory motion—because long-horizon temporal consistency is weak. This yields collision-free <i>incompletion</i>: kinematically poor configurations (see <b>Kinematic Deadlocks</b>) or episodes that exceed the execution horizon (<b>Temporal Overflows</b>), trading task success for conservative or erratic motion rather than true safety violations.
+          <b>Sub-optimal trajectory synthesis drives task failures without constraint violations.</b>
+          Even when states stay collision-free, policies often leave the nominal task manifold—through excessive halting or oscillatory motion—because long-horizon temporal consistency is weak. This yields collision-free <i>incompletion</i>: kinematically poor configurations (<b>Kinematic Deadlocks</b>) or episodes that exceed the execution horizon (<b>Temporal Overflows</b>), trading task success for conservative or erratic motion rather than true safety violations.
         </p>
         <p>
-          <b>Key Finding 8: Semantic misalignment induces stable but task-irrelevant interactions.</b>
-          Beyond kinematics, VLAs can execute mechanically stable, collision-free grasps on semantically wrong objects when distractors are visually similar. Physical safety alone is insufficient without fine-grained grounding; robust relational reasoning is needed to bind language to the correct target so safe motion serves the intended command (see <b>Semantic Misalignment</b>).
+          <b>Semantic misalignment induces stable but task-irrelevant interactions.</b>
+          Beyond kinematics, VLAs can execute mechanically stable, collision-free grasps on semantically wrong objects when distractors are visually similar. Physical safety alone is insufficient without fine-grained grounding; robust relational reasoning is needed to bind language to the correct target so safe motion serves the intended command (<b>Semantic Misalignment</b>).
         </p>
       </div>
     </div>
