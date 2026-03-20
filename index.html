@@ -467,6 +467,39 @@
         max-width: 33.333%;
       }
     }
+
+    /* Abstract → 大图 + 正文 */
+    .abstract-visual .abstract-figure {
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+    .abstract-visual .abstract-figure-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      background: #0f172a;
+    }
+    .abstract-visual .abstract-text {
+      max-width: 920px;
+      margin: 2rem auto 0;
+      padding: 0 0.75rem;
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: #e5e7eb !important;
+      text-align: justify;
+    }
+    .abstract-visual .abstract-text p {
+      color: #e5e7eb !important;
+      margin-bottom: 1rem;
+    }
+    .abstract-visual .abstract-text p:last-child {
+      margin-bottom: 0;
+    }
     
     /* END: 新增的图片悬浮效果CSS */
   </style>
@@ -500,12 +533,23 @@
     </div>
   </section>
 
-  <section class="section hero is-light">
+  <section class="section hero is-light abstract-visual" id="abstract">
     <div class="container">
-        <h3 class="title is-3 has-text-centered">Abstract</h3>
-        <div class="section-caption">
-          Despite the impressive manipulation capabilities of Vision-Language-Action (VLA) models, their operational safety under strict constraints remains largely unverified. To address this, we introduce a parametric safety benchmark to procedurally generate safety-critical scenarios with comprehensive stochasticity. To overcome the scalability bottlenecks of human teleoperation, we develop a novel keypose-driven data generation pipeline. Leveraging this infrastructure, we curate a large-scale dataset of 19,664 strictly collision-free demonstrations with extensive domain randomization. We then conduct a systematic cross-paradigm evaluation of eight VLA and two embodied foundation models. Our analysis reveals a critical generalization-safety tension: although high-diversity training fosters safer trajectories, task success remains fundamentally bottlenecked by sub-optimal trajectory synthesis and semantic misalignment. By providing a scalable pipeline, a robust dataset, and profound failure-mode insights, this work establishes a crucial foundation for developing safe and reliable VLA model.
-        </div>
+      <figure class="abstract-figure">
+        <img
+          class="abstract-figure-img"
+          src="assets/images/teaser.png"
+          alt="LIBERO-Safety overview figure"
+          loading="lazy">
+      </figure>
+      <div class="abstract-text content">
+        <p>
+          Despite strong manipulation performance, Vision-Language-Action (VLA) models remain difficult to verify under strict safety constraints. We introduce a parametric benchmark that procedurally generates safety-critical scenarios with broad stochasticity, together with a keypose-driven data generation pipeline to scale beyond human teleoperation bottlenecks.
+        </p>
+        <p>
+          Using this infrastructure, we curate a large-scale dataset of strictly collision-free demonstrations with extensive domain randomization, and evaluate multiple VLA and embodied foundation models. Our analysis highlights a tension between generalization and safety: higher-diversity training can encourage safer trajectories, yet success is still limited by trajectory synthesis and semantic alignment failures.
+        </p>
+      </div>
     </div>
   </section>
 
