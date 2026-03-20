@@ -415,7 +415,8 @@
       border-bottom: 1px solid #e5e7eb;
     }
     #task-demos .task-media-card,
-    #failure-cases .task-media-card {
+    #failure-cases .task-media-card,
+    #dataset-examples .task-media-card {
       background: #f8fafc;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
@@ -426,7 +427,9 @@
     #task-demos .task-media-card:hover,
     #task-demos .task-media-card:focus-within,
     #failure-cases .task-media-card:hover,
-    #failure-cases .task-media-card:focus-within {
+    #failure-cases .task-media-card:focus-within,
+    #dataset-examples .task-media-card:hover,
+    #dataset-examples .task-media-card:focus-within {
       border-color: #2563eb;
       box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.22), 0 10px 20px rgba(2, 6, 23, 0.10);
       animation: card-bounce 0.48s ease;
@@ -434,7 +437,9 @@
     #task-demos .task-media-card video,
     #task-demos .task-media-card img,
     #failure-cases .task-media-card video,
-    #failure-cases .task-media-card img {
+    #failure-cases .task-media-card img,
+    #dataset-examples .task-media-card video,
+    #dataset-examples .task-media-card img {
       width: 100%;
       height: auto;
       max-height: 280px;
@@ -444,7 +449,8 @@
       background: #ffffff;
     }
     #task-demos .task-media-card .task-label,
-    #failure-cases .task-media-card .task-label {
+    #failure-cases .task-media-card .task-label,
+    #dataset-examples .task-media-card .task-label {
       margin-top: 0.5rem;
       font-size: 0.85rem;
       color: #6b7280;
@@ -457,6 +463,11 @@
     }
     @media screen and (min-width: 1024px) {
       #task-demos .media-grid > .column.task-demo-col {
+        flex: none;
+        width: 20%;
+        max-width: 20%;
+      }
+      #dataset-examples .media-grid > .column.dataset-example-col {
         flex: none;
         width: 20%;
         max-width: 20%;
@@ -491,13 +502,15 @@
       max-width: 100%;
       margin: 0 auto;
       border-radius: 14px;
-      border: 1px solid rgba(226, 232, 240, 0.45); /* 浅色描边 */
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.06);
-      background: rgba(248, 250, 252, 0.9); /* 浅色底色（接近白色） */
+      border: none;
+      box-shadow: none;
+      background: transparent;
       outline: none;
       vertical-align: middle;
+      transition: transform 0.18s ease;
+    }
+    .abstract-visual .abstract-figure-img:hover {
+      animation: card-bounce 0.48s ease;
     }
     .abstract-visual .abstract-text {
       max-width: 920px;
@@ -533,6 +546,13 @@
     }
     .dataset-comparison-section a {
       color: #2563eb !important;
+    }
+    /* Dataset Comparison PNG hover bounce */
+    #dataset-comparison img:hover {
+      animation: card-bounce 0.48s ease;
+    }
+    #dataset-comparison img {
+      transition: transform 0.18s ease;
     }
     
     /* END: 新增的图片悬浮效果CSS */
@@ -581,6 +601,77 @@
         <p>
           Real-world VLA deployment is severely bottlenecked by physical safety and semantic reasoning, constituting critical (a) <b>VLA Safety Challenges</b>. To systematically evaluate these challenges, we introduce a comprehensive VLA safety benchmark and develop an efficient (b) <b>Data Generation Pipeline</b> to synthesize 19.7K strictly collision-free demonstrations. By evaluating VLA models fine-tuned on this corpus alongside zero-shot embodied foundation models, our (c) <b>Cross-Paradigm Assessment</b> uncovers fundamental bottlenecks in current embodied manipulation.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dataset-comparison-section" id="dataset-comparison">
+    <div class="container">
+      <h2 class="title is-1 has-text-centered section-title" style="margin-bottom: 2.5rem;">Benchmark</h2>
+
+      <h3 class="title is-3 has-text-centered section-title" style="margin: 0 0 1.25rem;">Overview</h3>
+      <figure>
+        <img
+          src="assets/images/pipeline.png"
+          alt="Overview of our VLA Safety Benchmark"
+          loading="lazy"
+          style="width: 100%; max-width: 1200px; display: block; margin: 0 auto; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);">
+      </figure>
+      <div class="content" style="max-width: 980px; margin: 1.75rem auto 0; padding: 0 0.75rem;">
+        <p style="text-align: justify;">
+          <b>Overview of our VLA Safety Benchmark.</b><br>
+          (a) <b>Comprehensive Environments:</b> Powered by our UBDDL, we construct massive, stochastic simulation environments featuring multi-dimensional visual/physical randomizations and human-object interactions.<br>
+          (b) <b>Hierarchical Safety Taxonomy:</b> A systematic evaluation suite assessing five critical dimensions of physical and semantic safety, strictly scaled across 3 difficulty tiers (L0-L2).<br>
+          (c) <b>Keypose-Driven Trajectory Generation:</b> Experts provide sparse keyposes that seed a CuRobo-based planner to synthesize diverse collision-free demonstrations, enabling scalable data collection.
+        </p>
+      </div>
+
+      <h3 class="title is-3 has-text-centered section-title" style="margin: 3rem 0 1.25rem;">Dataset Comparison</h3>
+      <figure>
+        <img
+          src="assets/images/comp.png"
+          alt="Dataset Comparison"
+          loading="lazy"
+          style="width: 100%; max-width: 1200px; display: block; margin: 0 auto; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);">
+      </figure>
+      <div class="content" style="max-width: 980px; margin: 1.75rem auto 0; padding: 0 0.75rem;">
+        <p style="text-align: justify;">
+          <b>Comparison with existing VLA benchmarks.</b> Our benchmark jointly covers perceptual perturbations, parametric task definitions (L0--L2), scene dynamics (static/dynamic), physical and semantic safety, and proximal human-robot interaction. Furthermore, our keypose-driven data generation pipeline enables highly scalable, collision-free data generation.
+        </p>
+      </div>
+
+      <h3 class="title is-3 has-text-centered section-title" style="margin: 3rem 0 1.25rem;">Dataset Examples</h3>
+      <div id="dataset-examples" class="columns is-multiline is-mobile is-variable is-2 media-grid">
+        <div class="column is-half-tablet dataset-example-col">
+          <div class="task-media-card">
+            <video class="demo-video" controls autoplay playsinline muted loop preload="metadata" src="assets/videos/episode_000001.mp4"></video>
+            <p class="has-text-centered task-label">episode_000001</p>
+          </div>
+        </div>
+        <div class="column is-half-tablet dataset-example-col">
+          <div class="task-media-card">
+            <video class="demo-video" controls autoplay playsinline muted loop preload="metadata" src="assets/videos/episode_000002.mp4"></video>
+            <p class="has-text-centered task-label">episode_000002</p>
+          </div>
+        </div>
+        <div class="column is-half-tablet dataset-example-col">
+          <div class="task-media-card">
+            <video class="demo-video" controls autoplay playsinline muted loop preload="metadata" src="assets/videos/episode_000003.mp4"></video>
+            <p class="has-text-centered task-label">episode_000003</p>
+          </div>
+        </div>
+        <div class="column is-half-tablet dataset-example-col">
+          <div class="task-media-card">
+            <video class="demo-video" controls autoplay playsinline muted loop preload="metadata" src="assets/videos/episode_000004.mp4"></video>
+            <p class="has-text-centered task-label">episode_000004</p>
+          </div>
+        </div>
+        <div class="column is-half-tablet dataset-example-col">
+          <div class="task-media-card">
+            <video class="demo-video" controls autoplay playsinline muted loop preload="metadata" src="assets/videos/episode_000005.mp4"></video>
+            <p class="has-text-centered task-label">episode_000005</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -719,19 +810,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section dataset-comparison-section" id="dataset-comparison">
-    <div class="container">
-      <h3 class="title is-3 has-text-centered section-title">Dataset Comparison</h3>
-      <figure>
-        <img
-          src="assets/images/comp.png"
-          alt="Dataset Comparison"
-          loading="lazy"
-          style="width: 100%; max-width: 1200px; display: block; margin: 0 auto; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);">
-      </figure>
     </div>
   </section>
 
