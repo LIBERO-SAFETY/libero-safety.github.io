@@ -564,6 +564,28 @@
       #failure-cases .failure-col.slot-5 { grid-column: 5; }
     }
 
+    /* Failure case：视频下方的 Key Findings 说明 */
+    #failure-cases .failure-case-analysis {
+      max-width: 960px;
+      margin: 2.25rem auto 0;
+      padding: 0 0.75rem;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #0f172a !important;
+      text-align: justify;
+    }
+    #failure-cases .failure-case-analysis p {
+      margin-bottom: 1.1rem;
+      color: #0f172a !important;
+    }
+    #failure-cases .failure-case-analysis p:last-child {
+      margin-bottom: 0;
+    }
+    #failure-cases .failure-case-analysis b {
+      color: #111827 !important;
+      font-weight: 600;
+    }
+
     /* Abstract → 大图 + 正文 */
     .abstract-visual .abstract-figure {
       margin: 0 auto;
@@ -950,6 +972,17 @@
             <p class="has-text-centered task-label">Temporal Overflows</p>
           </div>
         </div>
+      </div>
+
+      <div class="failure-case-analysis content">
+        <p>
+          <b>Key Finding 7: Sub-optimal trajectory synthesis drives task failures without constraint violations.</b>
+          Even when states stay collision-free, policies often leave the nominal task manifold—through excessive halting or oscillatory motion—because long-horizon temporal consistency is weak. This yields collision-free <i>incompletion</i>: kinematically poor configurations (see <b>Kinematic Deadlocks</b>) or episodes that exceed the execution horizon (<b>Temporal Overflows</b>), trading task success for conservative or erratic motion rather than true safety violations.
+        </p>
+        <p>
+          <b>Key Finding 8: Semantic misalignment induces stable but task-irrelevant interactions.</b>
+          Beyond kinematics, VLAs can execute mechanically stable, collision-free grasps on semantically wrong objects when distractors are visually similar. Physical safety alone is insufficient without fine-grained grounding; robust relational reasoning is needed to bind language to the correct target so safe motion serves the intended command (see <b>Semantic Misalignment</b>).
+        </p>
       </div>
     </div>
   </section>
