@@ -33,10 +33,10 @@
   <style>
     :root {
     --primary-color: #3273dc; /* Bulma's default blue */
-    /* Dark theme variables */
-    --text-color: #e5e7eb;              /* slate-200 */
-    --background-color: #080808;        /* near-black, deep blue-black */
-    --light-background-color: #0b0b0b;  /* slate-900 for panels */
+    /* Light theme variables */
+    --text-color: #0f172a;              /* slate-900 */
+    --background-color: #ffffff;       /* white page background */
+    --light-background-color: #f8fafc;/* slate-50 for panels */
     }
     html {
       scroll-behavior: smooth;
@@ -73,7 +73,7 @@
     .realmirror-banner {
       position: relative;
       overflow: hidden;
-      color: white;
+      color: #0f172a;
       background-color: var(--background-color); /* fallback while video loads */
     }
     .hero-bg-video {
@@ -88,15 +88,15 @@
     .realmirror-banner .hero-body {
       position: relative;
       z-index: 1;
-      background-color: rgba(0, 0, 0, 0.55); /* Dark overlay for text readability */
+      background-color: rgba(255, 255, 255, 0.72); /* Light overlay for text readability */
     }
     .realmirror-banner .title {
-      color: white;
+      color: #0f172a;
       font-size: 4rem;
       font-weight: 800;
     }
     .realmirror-banner .subtitle {
-      color: #f5f5f5;
+      color: #0f172a;
       font-weight: 500;
     }
     .realmirror-banner .hero-main-title.title {
@@ -120,7 +120,7 @@
       line-height: 1.38;
       text-align: center;
       white-space: normal;
-      color: #f5f5f5 !important;
+      color: #0f172a !important;
     }
     @media screen and (max-width: 768px) {
       .realmirror-banner .hero-subtitle {
@@ -146,21 +146,21 @@
       gap: 0.45rem;
       padding: 0.5rem 1.2rem;
       min-height: 2.5rem;
-      background: #1c1c1e;
-      color: #fafafa !important;
+      background: #f3f4f6;
+      color: #0f172a !important;
       border-radius: 9999px;
       font-weight: 500;
       font-size: 0.95rem;
       letter-spacing: 0.01em;
       text-decoration: none !important;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 1px 2px rgba(2, 6, 23, 0.08);
       transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     }
     .hero-pub-links a:hover {
-      background: #2c2c2e;
-      color: #fff !important;
-      border-color: rgba(255, 255, 255, 0.18);
+      background: #e5e7eb;
+      color: #0f172a !important;
+      border-color: rgba(15, 23, 42, 0.18);
       transform: translateY(-1px);
     }
     .hero-pub-links a .ai,
@@ -346,19 +346,19 @@
         max-width: 1000px; /* 适当加宽以适应段落 */
         margin: 2rem auto 3rem auto; /* 增加垂直间距 */
         padding: 1.75rem 2.25rem; /* 增加内部空间 */
-        background-color: #0f172a; /* 暗色卡片背景 */
-        border: 1px solid #334155; /* 暗色边框 */
+        background-color: #f8fafc; /* 浅色卡片背景 */
+        border: 1px solid #e5e7eb; /* 浅色边框 */
         border-radius: 16px; /* 更圆润的边角 */
         font-size: 1.15rem; /* 调整字体大小 */
-        color: #e5e7eb; /* 亮色字体 */
+        color: #0f172a; /* 深色字体 */
         font-weight: 400; /* 标准字重 */
         line-height: 1.75; /* 提高行高以增强可读性 */
         text-align: justify; /* 两端对齐 */
-        box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.35), 0 2px 6px -2px rgba(0, 0, 0, 0.25); /* 深色更明显但柔和的阴影 */
+        box-shadow: 0 6px 16px -2px rgba(2, 6, 23, 0.12), 0 2px 6px -2px rgba(2, 6, 23, 0.08); /* 浅色更自然的阴影 */
     }
 
     .section-caption b {
-        color: #f3f4f6; /* 加粗文字在暗色下更亮 */
+        color: #0f172a; /* 加粗文字更清晰 */
         font-weight: 600; /* 明确字重 */
     }
 
@@ -409,15 +409,15 @@
       color: #fff;
     }
     #task-demos .level-row-title {
-      color: #e5e7eb !important;
+      color: #0f172a !important;
       margin-bottom: 1rem !important;
       padding-bottom: 0.35rem;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid #e5e7eb;
     }
     #task-demos .task-media-card,
     #failure-cases .task-media-card {
-      background: #0f172a;
-      border: 1px solid #334155;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
       border-radius: 12px;
       padding: 0.5rem;
       height: 100%;
@@ -427,8 +427,8 @@
     #task-demos .task-media-card:focus-within,
     #failure-cases .task-media-card:hover,
     #failure-cases .task-media-card:focus-within {
-      border-color: #60a5fa;
-      box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.35), 0 10px 20px rgba(2, 6, 23, 0.45);
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.22), 0 10px 20px rgba(2, 6, 23, 0.10);
       animation: card-bounce 0.48s ease;
     }
     #task-demos .task-media-card video,
@@ -441,13 +441,13 @@
       object-fit: contain;
       border-radius: 8px;
       display: block;
-      background: #020617;
+      background: #ffffff;
     }
     #task-demos .task-media-card .task-label,
     #failure-cases .task-media-card .task-label {
       margin-top: 0.5rem;
       font-size: 0.85rem;
-      color: #94a3b8;
+      color: #6b7280;
     }
     @keyframes card-bounce {
       0% { transform: translateY(0) scale(1); }
@@ -495,7 +495,7 @@
       box-shadow:
         0 10px 28px rgba(0, 0, 0, 0.35),
         0 0 0 1px rgba(255, 255, 255, 0.06);
-      background: rgba(15, 23, 42, 0.35); /* 略微深底，避免纯透明边缘突兀 */
+      background: rgba(248, 250, 252, 0.9); /* 浅色底色（接近白色） */
       outline: none;
       vertical-align: middle;
     }
@@ -505,19 +505,34 @@
       padding: 0 0.75rem;
       font-size: 1.12rem;
       line-height: 1.75;
-      color: #e5e7eb !important;
+      color: var(--text-color) !important;
       text-align: justify;
     }
     .abstract-visual .abstract-text p {
-      color: #e5e7eb !important;
+      color: var(--text-color) !important;
       margin-bottom: 1rem;
     }
     .abstract-visual .abstract-text p:last-child {
       margin-bottom: 0;
     }
     .abstract-visual .abstract-text b {
-      color: #f3f4f6 !important;
+      color: #111827 !important;
       font-weight: 600;
+    }
+
+    /* Dataset Comparison: 白底并覆盖暗色主题文本 */
+    .dataset-comparison-section {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    .dataset-comparison-section p,
+    .dataset-comparison-section .content,
+    .dataset-comparison-section .title,
+    .dataset-comparison-section .subtitle {
+      color: #0f172a !important;
+    }
+    .dataset-comparison-section a {
+      color: #2563eb !important;
     }
     
     /* END: 新增的图片悬浮效果CSS */
@@ -554,6 +569,7 @@
 
   <section class="section hero is-light abstract-visual" id="abstract">
     <div class="container">
+      <h3 class="title is-3 has-text-centered section-title">OverView</h3>
       <figure class="abstract-figure">
         <img
           class="abstract-figure-img"
@@ -703,6 +719,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section dataset-comparison-section" id="dataset-comparison">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered section-title">Dataset Comparison</h3>
+      <figure>
+        <img
+          src="assets/images/comp.png"
+          alt="Dataset Comparison"
+          loading="lazy"
+          style="width: 100%; max-width: 1200px; display: block; margin: 0 auto; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);">
+      </figure>
     </div>
   </section>
 
