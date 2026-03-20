@@ -467,6 +467,53 @@
       70% { transform: translateY(2px) scale(0.997); }
       100% { transform: translateY(0) scale(1); }
     }
+
+    /* Evaluation results (no card frame; keep side-by-side widths aligned) */
+    .evaluation-results-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 1.75rem;
+    }
+
+    .evaluation-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .evaluation-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .evaluation-right-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .evaluation-two-col .evaluation-result-img {
+      /* 让 result2/result3/result4 在视觉上更接近，避免 result4 过高导致左右错位 */
+      max-height: 300px;
+    }
+    .evaluation-result-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      max-height: none;
+      object-fit: contain;
+    }
+    .evaluation-caption {
+      margin-top: 0.85rem;
+      font-size: 1rem;
+      color: #0f172a !important;
+      text-align: center;
+      line-height: 1.6;
+    }
     @media screen and (min-width: 1024px) {
       #task-demos .media-grid > .column.task-demo-col {
         flex: none;
@@ -686,38 +733,38 @@
     <div class="container">
       <h2 class="title is-1 has-text-centered section-title" style="margin-bottom: 2.5rem;">Evaluation</h2>
 
-      <div class="columns is-multiline is-mobile is-variable is-2">
-        <div class="column is-full">
-          <div class="task-media-card">
-            <img src="assets/images/result1.png" alt="Evaluation results on the Embodied Physical Safety Track" loading="lazy">
-            <p class="has-text-centered task-label">
-              <b>Evaluation results on the Embodied Physical Safety Track.</b> Metrics are reported as mean Success Rate (SR, %), with standard deviations in parentheses.
-            </p>
-          </div>
+      <div id="evaluation-results" class="evaluation-results-grid">
+        <div class="evaluation-result result-1">
+          <img class="evaluation-result-img" src="assets/images/result1.png" alt="Evaluation results on the Embodied Physical Safety Track" loading="lazy">
+          <p class="evaluation-caption">
+            <b>Evaluation results on the Embodied Physical Safety Track.</b> Metrics are reported as mean Success Rate (SR, %), with standard deviations in parentheses.
+          </p>
         </div>
 
-        <div class="column is-half">
-          <div class="task-media-card" style="margin-bottom: 1rem;">
-            <img src="assets/images/result2.png" alt="Evaluation results on the Semantic Safety Reasoning Track" loading="lazy">
-            <p class="has-text-centered task-label">
-              <b>Evaluation results on the Semantic Safety Reasoning Track.</b> Metrics are reported as Refusal Rate (RR, %).
-            </p>
+        <div class="evaluation-two-col">
+          <div class="evaluation-left-col">
+            <div class="evaluation-result result-2">
+              <img class="evaluation-result-img" src="assets/images/result2.png" alt="Evaluation results on the Semantic Safety Reasoning Track" loading="lazy">
+              <p class="evaluation-caption">
+                <b>Evaluation results on the Semantic Safety Reasoning Track.</b> Metrics are reported as Refusal Rate (RR, %).
+              </p>
+            </div>
+
+            <div class="evaluation-result result-3">
+              <img class="evaluation-result-img" src="assets/images/result3.png" alt="Impact of Data Scaling on Task Efficacy and Safety" loading="lazy">
+              <p class="evaluation-caption">
+                <b>Impact of Data Scaling on Task Efficacy and Safety.</b> Scaling demonstrations per task (50 for &pi;<sub>0.5</sub><sup>*</sup> vs. 500 for &pi;<sub>0.5</sub>) simultaneously improves SR and reduces CR. CuRobo serves as a privileged upper bound.
+              </p>
+            </div>
           </div>
 
-          <div class="task-media-card">
-            <img src="assets/images/result3.png" alt="Impact of Data Scaling on Task Efficacy and Safety" loading="lazy">
-            <p class="has-text-centered task-label">
-              <b>Impact of Data Scaling on Task Efficacy and Safety.</b> Scaling demonstrations per task (50 for &pi;<sub>0.5</sub><sup>*</sup> vs. 500 for &pi;<sub>0.5</sub>) simultaneously improves SR and reduces CR. CuRobo serves as a privileged upper bound.
-            </p>
-          </div>
-        </div>
-
-        <div class="column is-half">
-          <div class="task-media-card">
-            <img src="assets/images/result4.png" alt="Robustness Evaluation Across Axes of Environmental Stochasticity" loading="lazy">
-            <p class="has-text-centered task-label">
-              <b>Robustness Evaluation Across Axes of Environmental Stochasticity.</b>
-            </p>
+          <div class="evaluation-right-col">
+            <div class="evaluation-result result-4">
+              <img class="evaluation-result-img" src="assets/images/result4.png" alt="Robustness Evaluation Across Axes of Environmental Stochasticity" loading="lazy">
+              <p class="evaluation-caption">
+                Robustness Evaluation Across Axes of Environmental Stochasticity.
+              </p>
+            </div>
           </div>
         </div>
       </div>
