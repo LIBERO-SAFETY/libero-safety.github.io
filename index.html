@@ -416,7 +416,8 @@
     }
     #task-demos .task-media-card,
     #failure-cases .task-media-card,
-    #dataset-examples .task-media-card {
+    #dataset-examples .task-media-card,
+    #evaluation .task-media-card {
       background: #f8fafc;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
@@ -428,6 +429,8 @@
     #task-demos .task-media-card:focus-within,
     #failure-cases .task-media-card:hover,
     #failure-cases .task-media-card:focus-within,
+    #evaluation .task-media-card:hover,
+    #evaluation .task-media-card:focus-within,
     #dataset-examples .task-media-card:hover,
     #dataset-examples .task-media-card:focus-within {
       border-color: #2563eb;
@@ -439,7 +442,9 @@
     #failure-cases .task-media-card video,
     #failure-cases .task-media-card img,
     #dataset-examples .task-media-card video,
-    #dataset-examples .task-media-card img {
+    #dataset-examples .task-media-card img,
+    #evaluation .task-media-card video,
+    #evaluation .task-media-card img {
       width: 100%;
       height: auto;
       max-height: 280px;
@@ -450,7 +455,8 @@
     }
     #task-demos .task-media-card .task-label,
     #failure-cases .task-media-card .task-label,
-    #dataset-examples .task-media-card .task-label {
+    #dataset-examples .task-media-card .task-label,
+    #evaluation .task-media-card .task-label {
       margin-top: 0.5rem;
       font-size: 0.85rem;
       color: #6b7280;
@@ -676,6 +682,47 @@
     </div>
   </section>
 
+  <section class="section" id="evaluation">
+    <div class="container">
+      <h2 class="title is-1 has-text-centered section-title" style="margin-bottom: 2.5rem;">Evaluation</h2>
+
+      <div class="columns is-multiline is-mobile is-variable is-2">
+        <div class="column is-full">
+          <div class="task-media-card">
+            <img src="assets/images/result1.png" alt="Evaluation results on the Embodied Physical Safety Track" loading="lazy">
+            <p class="has-text-centered task-label">
+              <b>Evaluation results on the Embodied Physical Safety Track.</b> Metrics are reported as mean Success Rate (SR, %), with standard deviations in parentheses.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="task-media-card" style="margin-bottom: 1rem;">
+            <img src="assets/images/result2.png" alt="Evaluation results on the Semantic Safety Reasoning Track" loading="lazy">
+            <p class="has-text-centered task-label">
+              <b>Evaluation results on the Semantic Safety Reasoning Track.</b> Metrics are reported as Refusal Rate (RR, %).
+            </p>
+          </div>
+
+          <div class="task-media-card">
+            <img src="assets/images/result3.png" alt="Impact of Data Scaling on Task Efficacy and Safety" loading="lazy">
+            <p class="has-text-centered task-label">
+              <b>Impact of Data Scaling on Task Efficacy and Safety.</b> Scaling demonstrations per task (50 for &pi;<sub>0.5</sub><sup>*</sup> vs. 500 for &pi;<sub>0.5</sub>) simultaneously improves SR and reduces CR. CuRobo serves as a privileged upper bound.
+            </p>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="task-media-card">
+            <img src="assets/images/result4.png" alt="Robustness Evaluation Across Axes of Environmental Stochasticity" loading="lazy">
+            <p class="has-text-centered task-label">
+              <b>Robustness Evaluation Across Axes of Environmental Stochasticity.</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <section class="section hero is-light" id="task-demos">
     <div class="container">
       <h3 class="title is-3 has-text-centered section-title">Task Suite Demos</h3>
@@ -837,6 +884,8 @@
         </div>
       </div>
     </div>
+  </section>
+
   </section>
 
   <script>
