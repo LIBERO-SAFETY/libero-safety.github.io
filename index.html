@@ -500,6 +500,10 @@
     .abstract-visual .abstract-text p:last-child {
       margin-bottom: 0;
     }
+    .abstract-visual .abstract-text b {
+      color: #f3f4f6 !important;
+      font-weight: 600;
+    }
     
     /* END: 新增的图片悬浮效果CSS */
   </style>
@@ -544,10 +548,7 @@
       </figure>
       <div class="abstract-text content">
         <p>
-          Despite strong manipulation performance, Vision-Language-Action (VLA) models remain difficult to verify under strict safety constraints. We introduce a parametric benchmark that procedurally generates safety-critical scenarios with broad stochasticity, together with a keypose-driven data generation pipeline to scale beyond human teleoperation bottlenecks.
-        </p>
-        <p>
-          Using this infrastructure, we curate a large-scale dataset of strictly collision-free demonstrations with extensive domain randomization, and evaluate multiple VLA and embodied foundation models. Our analysis highlights a tension between generalization and safety: higher-diversity training can encourage safer trajectories, yet success is still limited by trajectory synthesis and semantic alignment failures.
+          Real-world VLA deployment is severely bottlenecked by physical safety and semantic reasoning, constituting critical (a) <b>VLA Safety Challenges</b>. To systematically evaluate these challenges, we introduce a comprehensive VLA safety benchmark and develop an efficient (b) <b>Data Generation Pipeline</b> to synthesize 19.7K strictly collision-free demonstrations. By evaluating VLA models fine-tuned on this corpus alongside zero-shot embodied foundation models, our (c) <b>Cross-Paradigm Assessment</b> uncovers fundamental bottlenecks in current embodied manipulation.
         </p>
       </div>
     </div>
