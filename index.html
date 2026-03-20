@@ -509,6 +509,11 @@
       background: transparent;
       max-height: none;
       object-fit: contain;
+      /* 与 teaser / comp 等图一致的悬停跳动 */
+      transition: transform 0.18s ease;
+    }
+    .evaluation-result-img:hover {
+      animation: card-bounce 0.48s ease;
     }
     .evaluation-caption {
       margin-top: 0.85rem;
