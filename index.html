@@ -477,24 +477,27 @@
       margin-bottom: 1.75rem;
     }
 
+    /* 左列 result2+result3 纵向堆叠，右列 result4；两列等高，左右用 space-evenly 对齐上下留白 */
     .evaluation-two-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 2rem;
-      align-items: start;
+      align-items: stretch;
     }
-    .evaluation-left-col {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+    .evaluation-left-col,
     .evaluation-right-col {
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
+      align-items: stretch;
+      min-width: 0;
+      min-height: 0;
     }
     .evaluation-two-col .evaluation-result-img {
-      /* 让 result2/result3/result4 在视觉上更接近，避免 result4 过高导致左右错位 */
-      max-height: 300px;
+      width: 100%;
+      height: auto;
+      max-height: 320px;
+      object-fit: contain;
     }
     .evaluation-result-img {
       width: 100%;
@@ -513,6 +516,19 @@
       color: #0f172a !important;
       text-align: center;
       line-height: 1.6;
+    }
+    @media screen and (max-width: 1023px) {
+      .evaluation-two-col {
+        grid-template-columns: 1fr;
+      }
+      .evaluation-left-col,
+      .evaluation-right-col {
+        justify-content: flex-start;
+        gap: 1.5rem;
+      }
+      .evaluation-two-col .evaluation-result-img {
+        max-height: none;
+      }
     }
     @media screen and (min-width: 1024px) {
       #task-demos .media-grid > .column.task-demo-col {
