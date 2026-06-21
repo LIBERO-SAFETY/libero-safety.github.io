@@ -1,1 +1,1 @@
-# libero-safety.github.io
+# LIBERO-Safety Benchmark Project Page
