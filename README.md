@@ -1,1 +1,1 @@
-# LIBERO-Safety Project Page
+# LIBERO-Safety Benchmark Project Page
