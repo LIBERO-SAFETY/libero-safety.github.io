@@ -550,14 +550,18 @@
       #failure-cases .failure-media-grid {
         display: grid !important;
         grid-template-columns: repeat(5, 1fr);
-        column-gap: 0.5rem;
-        row-gap: 1rem;
+        column-gap: 0.25rem !important;
+        row-gap: 0.75rem;
         align-items: start;
+        margin-left: 0;
+        margin-right: 0;
       }
       #failure-cases .failure-media-grid > .column.failure-col {
         flex: none !important;
         width: 100% !important;
         max-width: none !important;
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
       }
       #failure-cases .failure-col.slot-1 { grid-column: 1; }
       #failure-cases .failure-col.slot-3 { grid-column: 3; }
