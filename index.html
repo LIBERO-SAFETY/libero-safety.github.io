@@ -55,6 +55,46 @@
       margin-top: 1rem;
       font-size: 1.1rem;
     }
+    .hero-authors {
+      max-width: 64rem;
+      margin: 1.1rem auto 0;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.42;
+      color: #0f172a;
+    }
+    .hero-authors a {
+      color: #0f172a;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+    }
+    .hero-authors a:hover {
+      color: #2563eb;
+    }
+    .hero-affiliations {
+      margin-top: 0.45rem;
+      font-size: 0.94rem;
+      line-height: 1.32;
+    }
+    .hero-notes {
+      font-size: 0.88rem;
+      line-height: 1.28;
+    }
+    .hero-venue-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.7rem;
+      padding: 0.34rem 0.9rem;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.1);
+      color: #1d4ed8;
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
     .publication-links {
       margin-top: 1.5rem;
     }
@@ -468,36 +508,66 @@
       100% { transform: translateY(0) scale(1); }
     }
 
-    /* Evaluation results (no card frame; keep side-by-side widths aligned) */
+    /* Evaluation results: one table per row, with consistent rhythm. */
+    #evaluation .section-title {
+      margin-bottom: 2.25rem !important;
+      color: #0f172a;
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center !important;
+      letter-spacing: 0;
+    }
+    #evaluation > .container {
+      width: min(96vw, 1320px);
+      max-width: 1320px;
+    }
     .evaluation-results-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
       align-items: start;
-      margin-bottom: 1.75rem;
+      max-width: 1280px;
+      margin: 0 auto 1.75rem;
     }
-
-    /* 左列 result2+result3 纵向堆叠，右列 result4；两列等高，左右用 space-evenly 对齐上下留白 */
-    .evaluation-two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: stretch;
-    }
-    .evaluation-left-col,
-    .evaluation-right-col {
+    .evaluation-result {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      align-items: stretch;
-      min-width: 0;
-      min-height: 0;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0 0.25rem;
     }
-    .evaluation-two-col .evaluation-result-img {
-      width: 100%;
-      height: auto;
-      max-height: 320px;
-      object-fit: contain;
+    .evaluation-result + .evaluation-result {
+      padding-top: 0.4rem;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .evaluation-result-header {
+      max-width: 900px;
+      text-align: center;
+    }
+    .evaluation-result-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.35rem;
+      color: #2563eb;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .evaluation-result-title {
+      margin: 0;
+      color: #0f172a;
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.32;
+    }
+    .evaluation-result-note {
+      margin: 0.36rem auto 0;
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.45;
     }
     .evaluation-result-img {
       width: 100%;
@@ -509,30 +579,70 @@
       background: transparent;
       max-height: none;
       object-fit: contain;
-      /* 与 teaser / comp 等图一致的悬停跳动 */
       transition: transform 0.18s ease;
+    }
+    .evaluation-result.result-1 .evaluation-result-img {
+      max-width: 1260px;
+    }
+    .evaluation-supplement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.65rem;
+      width: 100%;
+      margin-top: 0.15rem;
+    }
+    .evaluation-supplement-img {
+      width: 100%;
+      max-width: 1080px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+    .evaluation-supplement-caption {
+      max-width: 960px;
+      margin: 0;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+    .evaluation-supplement-caption b {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .evaluation-supplement-caption .sr-blue {
+      color: #2563eb;
+      font-weight: 700;
+    }
+    .evaluation-supplement-caption .svr-red {
+      color: #dc2626;
+      font-weight: 700;
+    }
+    .evaluation-result.result-2 .evaluation-result-img {
+      max-width: 680px;
+    }
+    .evaluation-result.result-3 .evaluation-result-img {
+      max-width: 610px;
+    }
+    .evaluation-result.result-4 .evaluation-result-img {
+      max-width: 560px;
     }
     .evaluation-result-img:hover {
       animation: card-bounce 0.48s ease;
     }
-    .evaluation-caption {
-      margin-top: 0.85rem;
-      font-size: 1rem;
-      color: #0f172a !important;
-      text-align: center;
-      line-height: 1.6;
-    }
     @media screen and (max-width: 1023px) {
-      .evaluation-two-col {
-        grid-template-columns: 1fr;
+      .evaluation-results-grid {
+        gap: 1.6rem;
       }
-      .evaluation-left-col,
-      .evaluation-right-col {
-        justify-content: flex-start;
-        gap: 1.5rem;
+      .evaluation-result-title {
+        font-size: 1.08rem;
       }
-      .evaluation-two-col .evaluation-result-img {
-        max-height: none;
+      .evaluation-result-note {
+        font-size: 0.94rem;
       }
     }
     @media screen and (min-width: 1024px) {
@@ -668,6 +778,37 @@
       <div class="container is-widescreen has-text-centered">
         <h1 class="title is-1 hero-main-title">LIBERO-Safety</h1>
         <h2 class="subtitle is-3 hero-subtitle">LIBERO-Safety: A Comprehensive Benchmark for Physical and Semantic Safety in Vision-Language-Action Models</h2>
+        <div class="publication-authors hero-authors">
+          <div>
+            Rongxu Cui<sup>1,2,3*</sup>,
+            Zongzheng Zhang<sup>1,2*</sup>,
+            Jingrui Pang<sup>2</sup>,
+            Haohao Chi<sup>1</sup>,
+            Jinbang Guo<sup>2</sup>,
+            Saining Zhang<sup>1</sup>,<br>
+            Shaoxuan Xie<sup>2</sup>,
+            <a href="https://jinx-ustc.github.io/jinxin.github.io/" target="_blank" rel="noopener noreferrer">Xin Jin</a><sup>4</sup>,
+            <a href="https://yaomarkmu.github.io/" target="_blank" rel="noopener noreferrer">Yao Mu</a><sup>5</sup>,
+            <a href="https://www.jlyang.org/" target="_blank" rel="noopener noreferrer">Jiaolong Yang</a><sup>6</sup>,
+            <a href="https://scholar.google.com/citations?user=FLkv_vIAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener noreferrer">Guocai Yao</a><sup>2</sup>,
+            <a href="https://www.zhanxianyuan.xyz/" target="_blank" rel="noopener noreferrer">Xianyuan Zhan</a><sup>1</sup>,
+            <a href="https://air.tsinghua.edu.cn/en/info/1046/1188.htm" target="_blank" rel="noopener noreferrer">Ya-Qin Zhang</a><sup>1</sup>,
+            and <a href="https://sites.google.com/view/fromandto" target="_blank" rel="noopener noreferrer">Hao Zhao</a><sup>1,2&dagger;</sup>
+          </div>
+          <div class="hero-affiliations">
+            <sup>1</sup>Institute for AI Industry Research (AIR), Tsinghua University<br>
+            <sup>2</sup>Beijing Academy of Artificial Intelligence (BAAI)<br>
+            <sup>3</sup>Beihang University<br>
+            <sup>4</sup>Eastern Institute of Technology, Ningbo, China<br>
+            <sup>5</sup>Shanghai Jiao Tong University<br>
+            <sup>6</sup>Microsoft Research Asia (MSRA)
+          </div>
+          <div class="hero-notes">
+            <sup>*</sup>Equal contribution. &nbsp;&nbsp;
+            <sup>&dagger;</sup>Corresponding author.
+          </div>
+          <div class="hero-venue-badge">Accepted to ECCV 2026</div>
+        </div>
         <nav class="hero-pub-links" aria-label="Paper and resources">
           <a href="https://arxiv.org/pdf/2606.23686" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
@@ -782,40 +923,52 @@
 
       <div id="evaluation-results" class="evaluation-results-grid">
         <div class="evaluation-result result-1">
+          <div class="evaluation-result-header">
+            <span class="evaluation-result-kicker">Physical Safety</span>
+            <p class="evaluation-result-title">Embodied Physical Safety Track</p>
+            <p class="evaluation-result-note">Mean Success Rate (SR, %) with standard deviations in parentheses.</p>
+          </div>
           <img class="evaluation-result-img" src="assets/images/result1.png" alt="Evaluation results on the Embodied Physical Safety Track" loading="lazy">
-          <p class="evaluation-caption">
-            <b>Evaluation results on the Embodied Physical Safety Track.</b> Metrics are reported as mean Success Rate (SR, %), with standard deviations in parentheses.
-          </p>
+          <figure class="evaluation-supplement physical-sparkline">
+            <img class="evaluation-supplement-img" src="assets/images/pic3_01.png" alt="Embodied physical safety trend sparklines across tasks and methods" loading="lazy">
+            <figcaption class="evaluation-supplement-caption">
+              <b>Physical safety trends across tasks and methods.</b>
+              Sparklines summarize L0-L2 behavior with a shared 0-1 y-axis:
+              <span class="sr-blue">success rate</span> is shown in blue and
+              <span class="svr-red">safety violation rate</span> is shown in red.
+            </figcaption>
+          </figure>
         </div>
 
-        <div class="evaluation-two-col">
-          <div class="evaluation-left-col">
-            <div class="evaluation-result result-2">
-              <img class="evaluation-result-img" src="assets/images/result2.png" alt="Evaluation results on the Semantic Safety Reasoning Track" loading="lazy">
-              <p class="evaluation-caption">
-                <b>Evaluation results on the Semantic Safety Reasoning Track.</b> Metrics are reported as Refusal Rate (RR, %).
-              </p>
-            </div>
-
-            <div class="evaluation-result result-3">
-              <img class="evaluation-result-img" src="assets/images/result3.png" alt="Impact of Data Scaling on Task Efficacy and Safety" loading="lazy">
-              <p class="evaluation-caption">
-                <b>Impact of Data Scaling on Task Efficacy and Safety.</b> Scaling demonstrations per task (50 for &pi;<sub>0.5</sub><sup>*</sup> vs. 500 for &pi;<sub>0.5</sub>) simultaneously improves SR and reduces CR. CuRobo serves as a privileged upper bound.
-              </p>
-            </div>
+        <div class="evaluation-result result-2">
+          <div class="evaluation-result-header">
+            <span class="evaluation-result-kicker">Semantic Safety</span>
+            <p class="evaluation-result-title">Semantic Safety Reasoning Track</p>
+            <p class="evaluation-result-note">Metrics are reported as Refusal Rate (RR, %).</p>
           </div>
+          <img class="evaluation-result-img" src="assets/images/result2.png" alt="Evaluation results on the Semantic Safety Reasoning Track" loading="lazy">
+        </div>
 
-          <div class="evaluation-right-col">
-            <div class="evaluation-result result-4">
-              <img class="evaluation-result-img" src="assets/images/result4.png" alt="Robustness Evaluation Across Axes of Environmental Stochasticity" loading="lazy">
-              <p class="evaluation-caption">
-                Robustness Evaluation Across Axes of Environmental Stochasticity.
-              </p>
-            </div>
+        <div class="evaluation-result result-3">
+          <div class="evaluation-result-header">
+            <span class="evaluation-result-kicker">Data Scaling</span>
+            <p class="evaluation-result-title">Impact of Data Scaling on Task Efficacy and Safety</p>
+            <p class="evaluation-result-note">More demonstrations improve SR while reducing CR; CuRobo serves as a privileged upper bound.</p>
           </div>
+          <img class="evaluation-result-img" src="assets/images/result3.png" alt="Impact of Data Scaling on Task Efficacy and Safety" loading="lazy">
+        </div>
+
+        <div class="evaluation-result result-4">
+          <div class="evaluation-result-header">
+            <span class="evaluation-result-kicker">Robustness</span>
+            <p class="evaluation-result-title">Environmental Stochasticity Evaluation</p>
+            <p class="evaluation-result-note">Robustness across perturbation axes including noise, initial state, view, scene, layout, and unseen objects.</p>
+          </div>
+          <img class="evaluation-result-img" src="assets/images/result4.png" alt="Robustness Evaluation Across Axes of Environmental Stochasticity" loading="lazy">
         </div>
       </div>
     </div>
+  </section>
 
   <section class="section" id="task-demos">
     <div class="container">
